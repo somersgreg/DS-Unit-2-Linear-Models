@@ -1,0 +1,63 @@
+If dont have Vs Code installed then skip to "chocolatey install".
+
+To start Jupyter in vscode terminal (Ctrl + Shift + ~) type: 
+>	`jupyter notebook`	-> If Jupyter opens in browser you're all set.	-> Doesnt work? Check if have Pip.
+
+Check if have Pip: 
+>	`pip --version`	-> Yes? Install Jupyter (next step).	-> No? Check for Python (below next).
+
+Install Jupyter, in preferably elevated powershell, type: 
+>	`pip install jupyter`	-> Refresh Environment (see below) and then run Jupyter Notebook. Reboot may be required.
+
+Check for Python:
+>	'Python --version'	-> Yes? Install Pip.	-> No? Install Chocolatey.
+
+Install Pip: 
+>	`python -m pip install -U pip`
+
+REFRESH ENVIRONMENT
+After all installs you must: 
+>	`refreshenv`
+
+CHOCOLATEY INSTALL:
+In elevated PowerShell, ensure Get-ExecutionPolicy is not Restricted.
+>	`Get-ExecutionPolicy`
+
+If it returns Restricted, then run...
+>	`Set-ExecutionPolicy AllSigned`
+ or...
+>	`Set-ExecutionPolicy Bypass -Scope Process`
+ then/or...
+>	`Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+Wait a few seconds for the command to complete.
+
+If you don't see any errors, type `choco` or `choco -?` to check if working.
+
+INSTALL PYTHON:
+This will install current (non-beta) version by default.  Dont forget to "Refresh Environment" (above) after each feature install.
+>	`choco install python` (--pre option recommended but I dont know what it means.)
+
+Now you can...
+Install Pip
+>	`python -m pip install -U pip`
+...Then refresh and install Jupyter:
+>	`pip install jupyter`
+
+Now install what else you need:
+
+Install Git + Bash
+>	`choco install git.install`
+Install VS Code
+>	`choco install vscode.install`
+	Be SURE to set default terminal profile to GitBash!
+Install Pandas
+>	`pip install pandas`
+Install MathPlotLib
+>	`pip install matplotlib`
+Install Seaborn
+>	`pip install seaborn`
+Here's to mess with virtual environments
+https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref
+
+WHEN WORKING IN GITHUB AND YOU GET THE "SOMETHING WENT WRONG ON VIEWING NOTEBOOKS:
+COPY THE URL & ENTER HERE: https://nbviewer.jupyter.org/
