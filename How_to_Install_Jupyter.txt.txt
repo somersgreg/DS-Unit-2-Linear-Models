@@ -41,12 +41,22 @@ Now you can...
 Install Pip
 >	`python -m pip install -U pip`
 ...Then refresh and install Jupyter:
+>	`pip --version`
 >	`pip install jupyter`
+> 	`pip install pipenv`
+Remember this must be in elevated powershell or other cmd. 
 
 Now install what else you need:
 
 Install Git + Bash
 >	`choco install git.install`
+> 	`git config --global user.name [any username]`
+>	`git config --global user.email [your github email]`
+>	`git config --global core.autocrlf true`
+This is to bother you every time you commit but you can turn off warnings.
+> 	`git config --global core.editor "code --wait"`
+This is if you're too good for vim
+
 Install VS Code
 >	`choco install vscode.install`
 	Be SURE to set default terminal profile to GitBash!
@@ -59,5 +69,12 @@ Install Seaborn
 Here's to mess with virtual environments
 https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref
 
+Go to github work via cmd promt (gitbash) folder (elevated)
+
+
+
+
+
 WHEN WORKING IN GITHUB AND YOU GET THE "SOMETHING WENT WRONG ON VIEWING NOTEBOOKS:
 COPY THE URL & ENTER HERE: https://nbviewer.jupyter.org/
+
